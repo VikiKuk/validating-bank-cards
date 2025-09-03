@@ -24,6 +24,7 @@
     "start": "webpack serve",
     "test": "jest __tests__",
     "test:e2e": "start-server-and-test start http://localhost:8080 test:e2e:only",
-    "test:e2e:only": "jest E2E"
+    "test:e2e:only": "jest E2E",
+    "build": "webpack --mode production"
   }
 }
