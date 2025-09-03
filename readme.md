@@ -1,4 +1,4 @@
-![CI](https://github.com/VikiKuk/validating-bank-cards/actions/workflows/node.js.yml/badge.svg)
+[![CI](https://github.com/VikiKuk/validating-bank-cards/actions/workflows/node.js.yaml/badge.svg)](https://github.com/VikiKuk/validating-bank-cards/actions/workflows/node.js.yaml)
 
 # 💳 Credit Card Validator
 
