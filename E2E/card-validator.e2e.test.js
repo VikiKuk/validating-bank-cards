@@ -1,19 +1,22 @@
+/**
+ * @jest-environment node
+ */
+
 import puppeteer from 'puppeteer';
 
 let browser;
 let page;
 
 beforeAll(async () => {
+  const isCI = !!process.env.CI;
+
   browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: isCI ? ['--no-sandbox', '--disable-setuid-sandbox'] : [],
   });
+
   page = await browser.newPage();
   await page.goto('http://localhost:8080');
-});
-
-afterAll(async () => {
-  await browser.close();
 });
 
 afterAll(async () => {
