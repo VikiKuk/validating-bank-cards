@@ -4,9 +4,16 @@ let browser;
 let page;
 
 beforeAll(async () => {
-  browser = await puppeteer.launch({ headless: 'new' });
+  browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   page = await browser.newPage();
   await page.goto('http://localhost:8080');
+});
+
+afterAll(async () => {
+  await browser.close();
 });
 
 afterAll(async () => {
